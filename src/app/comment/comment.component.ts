@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Posts } from './../models/posts.model';
+import { Component, OnInit, Input } from '@angular/core';
 import { Comments } from './../models/comments.model';
 import { CommentService } from './../services/comment.service';
 
@@ -14,6 +15,9 @@ export class CommentComponent implements OnInit {
 
   // uma propriedade que será um array do tipo da interface
   ArrayComments: Comments[] = [];
+
+  // @Input para receber o id do Post
+  @Input() Posts;
 
   // instancie o serviço através de injeção de dependência no construtor da classe do componente
   constructor(private commentService: CommentService) { }

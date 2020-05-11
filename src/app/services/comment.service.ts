@@ -6,15 +6,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommentService {
 
-  constructor() { }
+  private JsonExemple = 'https://jsonplaceholder.typicode.com/comments';
+  constructor(private http: HttpClient) { }
 
   async Get(){
-
+    const resposta = await this.http.get(this.JsonExemple).toPromise();
+    console.log(resposta);
+    return resposta;
   }
   async GetById(id){
-
+    const resposta = await this.http.get(this.JsonExemple + id).toPromise();
+    console.log(resposta);
+    return resposta;
   }
-  async Post(postId){
-
+  async Post(id){
+    return id;
   }
 }

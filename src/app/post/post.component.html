@@ -1,1 +1,31 @@
-<p>post works!</p>
+<form #cadastroPost="ngForm" (ngSubmit)="onSubmit(cadastroPost)">
+  <div class="form-group">
+    <label>Titulo: </label>
+    <input type="text" name="title" [(ngModel)]="post.title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Comentario: </label>
+    <input type="text" name="body" [(ngModel)]="post.body" class="form-control">
+  </div>
+  <button>Teste</button>
+  <app-comment *ngIf="" ></app-comment>
+  <hr>
+
+  <div *ngFor="let a of ArrayPosts">
+    <ul>
+      <li>{{ a.userId }}</li>
+      <li>{{ a.id }}</li>
+      <li>{{ a.title }}</li>
+      <li>{{ a.body }}</li>
+    </ul>
+    </div>
+  <app-comment *ngIf="" ></app-comment>
+
+
+  <div class="form-group">
+      <select clas="form-control">
+        <option value="">Selecione... </option>
+        <option *ngFor="let user of usuario" [value]="user">{{ user }}</option>
+      </select>
+  </div>
+</form>

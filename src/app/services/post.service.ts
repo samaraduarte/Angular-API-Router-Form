@@ -6,15 +6,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostService {
 
-  constructor() { }
+  private JsonExemple = 'https://jsonplaceholder.typicode.com/posts';
+  constructor(private http: HttpClient) { }
 
   async Get(){
-
+    const resposta = await this.http.get(this.JsonExemple).toPromise();
+    console.log(resposta);
+    return resposta;
   }
   async GetById(id){
-
+    const resposta = await this.http.get(this.JsonExemple + id).toPromise();
+    console.log(resposta);
+    return resposta;
   }
-  async Post(userId){
-
+  async Post(id){
+    return id;
   }
 }

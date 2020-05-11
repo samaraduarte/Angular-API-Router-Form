@@ -6,3 +6,4 @@ export interface Comments {
   body: string;
 }
 
+const exibirComentario  = false;

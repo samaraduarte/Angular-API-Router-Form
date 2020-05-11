@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from './../models/user.model';
 import { UserService } from './../services/user.service';
@@ -20,6 +21,7 @@ export class UserComponent implements OnInit {
 
   // execute a chamada da função get dentro do ngOnInit
   async ngOnInit(){
-    await this.userService.Get();
+    const resp = await this.userService.Get();
+    return resp;
   }
 }
